@@ -1,0 +1,37 @@
+The principle of version control
+A benefit of version control
+An example of version control
+
+Version control is a system that recieves a directory or file from 
+your computer and controls changes of files in the directory or in 
+file and after finding any changes it allows user to push those 
+changes in the system whith commentary about changes. 
+
+In Git version control system these actions are realized in GUI
+(graphical user interface) or through a command prompt by next
+commands:
+To add file or directory to system use:
+   git add myfile
+or
+   git add diriectory_name
+
+As any changes are done  we need to save those locally using:
+   git commit -m "commentary"
+
+When changes saved it needs to save changes in systemby using command:
+   git push
+
+But why do you need a version control system?
+As program is developed its filesystem is growing fastly and daily
+it's files are changing. And what if one change brakes the whole
+program but you do not have the previous version of that file. In 
+that case version control system helps a lot - if you kept to push
+and commit changes - you can go back in changes and use previous
+version of file to return program in its working condition.
+
+Also when a lot of people work on the same program that divided on
+a few files that changing every day. Thanks to the version control
+system changes of every file are documented with commentaries of 
+developer showing what is changed and with possibility to go back
+in the tree of commits.
+
