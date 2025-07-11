@@ -1,3 +1,6 @@
+//First version of the program to convert a numeric grade to a letter grade
+// This program takes a numeric grade input from the user, checks if it's valid,   
+// and then converts it to a letter grade with a possible plus or minus suffix.
 using System;
 
 class Program
