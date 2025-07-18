@@ -1,0 +1,11 @@
+What is abstraction and why is it important? 
+
+1. Explain the meaning of Abstraction.
+Abstraction is a concept in programming which requires hiding complexity and exposing only 
+essential features of a program. It is achieved by separating code into classes with different 
+functions and methods which acomplish a certain task and then used in main function. This helps to
+ avoid code-repeating, impoves optimisation and reusability of code by ease of its maintainability.
+2. Highlight a benefit of Abstraction.
+3. Provide an application of Abstraction.
+4. Use a code example of Abstraction from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
+5. Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
