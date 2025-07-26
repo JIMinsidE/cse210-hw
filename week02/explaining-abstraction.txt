@@ -1,11 +1,66 @@
 What is abstraction and why is it important? 
 
 1. Explain the meaning of Abstraction.
+2. Highlight a benefit of Abstraction.
+3. Provide an application of Abstraction.
+4. Use a code example of Abstraction from the program you wrote. (You should copy and paste 
+a few lines of code that demonstrate the use of the principle.)
+5. Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
+
 Abstraction is a concept in programming which requires hiding complexity and exposing only 
 essential features of a program. It is achieved by separating code into classes with different 
 functions and methods which acomplish a certain task and then used in main function. This helps to
  avoid code-repeating, impoves optimisation and reusability of code by ease of its maintainability.
-2. Highlight a benefit of Abstraction.
-3. Provide an application of Abstraction.
-4. Use a code example of Abstraction from the program you wrote. (You should copy and paste a few lines of code that demonstrate the use of the principle.)
-5. Thoroughly explain these concepts. (This likely cannot be done in less than 100 words.)
+
+Code is devided on several classes 
+public class Job |- class
+{
+    public string _company;     |- fields or class variables
+    public string _jobTitle;    |- fields or class variables
+    public int _startYear;      |- fields or class variables
+    public int _endYear;        |- fields or class variables
+
+    public void DisplayJobDetails() |- function
+    {
+        Console.WriteLine($"{_jobTitle} {_company} {_startYear}-{_endYear}");
+        
+    }
+
+}
+public class Resume() |-class
+{
+    public string _name;    |- fields or class variables
+    public List<Job> _jobs = new List<Job>() {};|- fields or class variables
+
+    public void Display() |- function
+    {
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine("Jobs:");
+        
+        foreach (Job job in _jobs)
+        {
+            job.DisplayJobDetails();|using method from other class
+        }
+    }
+}
+class Program |- Main class, basically the main program that user can use and see
+{
+    static void Main(string[] args)
+    {
+        Job job1 = new Job();
+
+        job1._jobTitle =  "Software Engineer";
+        job1._company = "Microsoft";
+        job1._startYear = 2019; 
+        job1._endYear = 2022;
+        
+        Job job2 = new Job();
+
+        myResume.Display();
+    }
+}
+In this example of program we can see an application of abstraction
+method in that program that helps to contain all the main functionality
+outside the main running function and gets main function to be really short
+which means it is simpler to maintain and change its functianality with 
+almost no editing of the main program file. 
