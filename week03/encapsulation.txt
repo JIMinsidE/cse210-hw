@@ -1,0 +1,34 @@
+Encapsulation is a mainly used method in programming using object-oriented programming.
+It realised with hiding main variables into private state and useing public methods like
+getters and setters to get them seen by user. By doing so it helps to protect the internal
+state of a variable or an object from unintended or harmful changes that can bbrake a program.
+
+Like here in the class Fraction we can see that principle applied using GetfractionString() and
+GetDecimalValue() methods to access private fields of public class Fractions
+
+public class Fractions
+{
+    private int _numerator;
+    private int _denominator;
+    public string GetfractionString()
+    {
+        string frac_string = $"{_numerator}/{_denominator}";
+        return frac_string;
+    }
+    public double GetDecimalValue()
+    {
+        return (double)_numerator / _denominator;
+    }
+}
+
+This helps also to maintain the program as you need to make less changes to a program if you need
+to change something in its functionality. 
+
+The appliances for encapsulations are seen in many aspects of our life, like banking(data like 
+account balance cannot be modified outside the class) or it can be insurance company storing 
+users private information which should be accessed in programm only using special methods and
+logic to provide the needed level of safety for users information.
+
+But always be carefull while using those methods like Get and Set because overusing them may 
+make your class less robust allowing unintended acces or modification of data practically 
+braking the sense of using encapsulation in a program.
