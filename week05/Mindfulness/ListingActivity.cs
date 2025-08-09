@@ -45,15 +45,31 @@ class ReflectingActivity : Activity
 
     private void DisplayPrompt(string prompt)
     {
+        Console.WriteLine($"\n--- {prompt} ---");
     }
 
     private void DisplayQuestions()
     {
-
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.WriteLine($"> {GetRandomQuestion()}");
+            ShowSpinner(5);
+        }
     }
 
     public void Run()
     {
+        DisplayStartingMessage();
+        string prompt = GetRandomPrompt();
+        DisplayPrompt(prompt);
 
+        Console.Write("When you have something in mind, please, press Enter to continue...");
+        Console.ReadLine();
+        Console.WriteLine("\nNow ponder on each of the following questions as they relate to this experience.");
+        ShowCountDown(3);
+
+        DisplayQuestions();
+        DisplayEndingMessage();
     }
 }
