@@ -8,8 +8,8 @@ public class Activity
         _name = name;
         _description = description;
     }
-
-    public void DisplayStartingMessage()
+    
+public void DisplayStartingMessage()
     {
         Console.WriteLine($"\nWelcome to the {_name}.");
         Console.WriteLine(_description);
@@ -53,9 +53,9 @@ public class Activity
         int i = 0;
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine(sequence[i % sequence.Length]);
+            Console.Write(sequence[i % sequence.Length]);
             Thread.Sleep(200);
-            Console.WriteLine("\b \b");
+            Console.Write("\b \b");
             i++;
         }
     }
@@ -66,18 +66,8 @@ public class Activity
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.WriteLine("\b \b");
+            Console.Write("\b \b");
         }
     }
-
-    public void ShowBreath(int seconds)
-    {
-
-        for (int i = 0; i < seconds; i++)
-        {   
-            Console.WriteLine(i);
-            Thread.Sleep(1000);
-            Console.WriteLine("\b \b");
-        }
-    }
+    
 }
