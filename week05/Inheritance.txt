@@ -1,0 +1,54 @@
+Inheritance is a very important principle in object-oriented programming that
+allows child or subclass to inherit its parental class properties and behaviours.
+This means that a child class can access all the methods and variables of superclass
+which are public or protected, allowing it to reuse already written code and build
+more specialized program for current task.
+
+The major benefit of using Inheritance lies in code rusability in certain power(
+to be exactly it is considered to use inheritance until the 4 child after first 
+parental class as it will be hard to unwrap all the branches of inheerited classes
+and programm becomes less understandable for other people).
+
+For example, in code down below we can see, how this principle applied in the code
+
+public class Assignment
+{
+    protected string _studentName;
+    protected string _topic;
+
+    public Assignment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+    }
+    public string GetSummary()
+    {
+        return $"{_studentName} - {_topic}";
+    }
+}
+
+We have a parental class Assignment with its attributes and methods which are
+being used by child class MathAssignment
+
+public class MathAssignment : Assignment // <= By adding this part to the name of the class
+{
+    private string _textBookSection;
+    private string _problems;
+
+    public MathAssignment(string studentName, string topic, string textBookSection, string problems)
+        : base(studentName, topic) // <= and ataching parental variables to the constructor of MathAssignment class
+    {
+        _textBookSection = textBookSection;
+        _problems = problems;   
+    }
+    public string GetHomeworkList()
+    {
+        return $"{GetSummary()} - Section: {_textBookSection}, Problems: {_problems}"; // <= And then finally using it
+    }
+
+}
+
+
+In real life this method applies to many parts of our lifes, such as basic having a credit or a debit card
+They are cards, they have a number, CVV code, validity date, but they are actiually working in different ways
+and such ways are programmed in banking systems by using this method to make a program better.
