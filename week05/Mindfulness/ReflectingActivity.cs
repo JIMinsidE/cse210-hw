@@ -33,7 +33,7 @@ class ListingActivity : Activity
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
         while (DateTime.Now < endTime)
         {
-            Console.Write("> ");
+            Console.WriteLine("> ");
             string? item = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(item))
             {
@@ -48,7 +48,7 @@ class ListingActivity : Activity
         DisplayStartingMessage();
         Console.WriteLine("\nList as many responses as you can to the following prompt:");
         Console.WriteLine($"--- {GetRandomPrompt()} ---");
-        Console.Write("You may begin in: ");
+        Console.WriteLine("You may begin in: ");
         ShowCountDown(5);
 
         List<string> responses = GetListFromUser();

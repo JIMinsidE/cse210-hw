@@ -8,8 +8,8 @@ public class Activity
         _name = name;
         _description = description;
     }
-    
-public void DisplayStartingMessage()
+
+    public void DisplayStartingMessage()
     {
         Console.WriteLine($"\nWelcome to the {_name}.");
         Console.WriteLine(_description);
@@ -53,9 +53,9 @@ public void DisplayStartingMessage()
         int i = 0;
         while (DateTime.Now < endTime)
         {
-            Console.Write(sequence[i % sequence.Length]);
+            Console.WriteLine(sequence[i % sequence.Length]);
             Thread.Sleep(200);
-            Console.Write("\b \b");
+            Console.WriteLine("\b \b");
             i++;
         }
     }
@@ -66,8 +66,18 @@ public void DisplayStartingMessage()
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.WriteLine("\b \b");
         }
     }
-    
+
+    public void ShowBreath(int seconds)
+    {
+
+        for (int i = 0; i < seconds; i++)
+        {   
+            Console.WriteLine(i);
+            Thread.Sleep(1000);
+            Console.WriteLine("\b \b");
+        }
+    }
 }

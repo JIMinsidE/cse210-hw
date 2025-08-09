@@ -66,7 +66,7 @@ class ReflectingActivity : Activity
         string prompt = GetRandomPrompt();
         DisplayPrompt(prompt);
 
-        Console.Write("When you have something in mind, please, press Enter to continue...");
+        Console.WriteLine("When you have something in mind, please, press Enter to continue...");
         Console.ReadLine();
         Console.WriteLine("\nNow ponder on each of the following questions as they relate to this experience.");
         ShowCountDown(3);

@@ -14,7 +14,7 @@ class Program
             Console.WriteLine("3. Reflection Activity");
             Console.WriteLine("4. Exit");
 
-            Console.Write("Enter the number of your choice: ");
+            Console.WriteLine("Enter the number of your choice: ");
             string choice = Console.ReadLine();
 
             
