@@ -1,5 +1,9 @@
 using System;
 
+// Well this time I enhanced the programm by adding breathing functionality
+// Exhaling time is longer than inhaling time by chznging the sleep time
+// I also added a spinner to the breathing activity to make it more interactive
+
 class Program
 {
     static void Main(string[] args)
@@ -17,12 +21,12 @@ class Program
             Console.WriteLine("Enter the number of your choice: ");
             string choice = Console.ReadLine();
 
-            
+
             switch (choice)
             {
                 case "1":
                     new BreathingActivity().Run();
-                    
+
                     break;
 
                 case "2":
