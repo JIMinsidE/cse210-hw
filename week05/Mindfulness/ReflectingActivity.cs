@@ -23,7 +23,8 @@ class ListingActivity : Activity
 
     private string GetRandomPrompt()
     {
-
+        Random rand = new Random();
+        return _prompts[rand.Next(_prompts.Count)];
     }
 
     private List<string> GetListFromUser()
@@ -42,8 +43,18 @@ class ListingActivity : Activity
         return items;
     }
 
-    public override void Run()
+    public void Run()
     {
-    
+        DisplayStartingMessage();
+        Console.WriteLine("\nList as many responses as you can to the following prompt:");
+        Console.WriteLine($"--- {GetRandomPrompt()} ---");
+        Console.Write("You may begin in: ");
+        ShowCountDown(5);
+
+        List<string> responses = GetListFromUser();
+        _count = responses.Count;
+
+        Console.WriteLine($"\nYou listed {_count} items.");
+        DisplayEndingMessage();
     }
 }
