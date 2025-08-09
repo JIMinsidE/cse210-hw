@@ -35,12 +35,14 @@ class ReflectingActivity : Activity
 
     private string GetRandomPrompt()
     {
-
+        Random rand = new Random();
+        return _prompts[rand.Next(_prompts.Count)];
     }
 
     private string GetRandomQuestion()
     {
-
+        Random rand = new Random();
+        return _questions[rand.Next(_questions.Count)];
     }
 
     private void DisplayPrompt(string prompt)
