@@ -9,7 +9,7 @@ class BreathingActivity : Activity
     {
     }
 
-    public override void Run()
+    public void Run()
     {
         DisplayStartingMessage();
         DateTime endTime = DateTime.Now.AddSeconds(_duration);

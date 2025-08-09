@@ -11,23 +11,26 @@ class Program
             Console.WriteLine("Please choose an activity to start:");
             Console.WriteLine("1. Breathing Activity");
             Console.WriteLine("2. Listing Activity");
-            Console.WriteLine("3. Reflection Activity4. Exit");
+            Console.WriteLine("3. Reflection Activity");
+            Console.WriteLine("4. Exit");
 
             Console.Write("Enter the number of your choice: ");
             string choice = Console.ReadLine();
 
+            
             switch (choice)
             {
                 case "1":
-                    BreathingActivity.Run();
+                    new BreathingActivity().Run();
+                    
                     break;
 
                 case "2":
-                    ListingActivity.Run();
+                    new ListingActivity().Run();
                     break;
 
                 case "3":
-                    ReflectionActivity.Run();
+                    new ReflectingActivity().Run();
                     break;
 
                 case "4":
