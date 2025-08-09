@@ -32,11 +32,11 @@ class BreathingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.WriteLine("\nBreathe in... ");
-            //Breath(5);
-            ShowCountDown(3);
-            Console.WriteLine("Breathe out... ");
-            //Breath(5, 800); // 
-            ShowCountDown(5);
+            Breath(5);
+            // ShowCountDown(3);
+            Console.WriteLine("\nBreathe out... ");
+            Breath(5, 1000); // 
+            // ShowCountDown(5);
             
         }
 
