@@ -1,3 +1,4 @@
+
 public class Activity
 {
     protected string _name;
@@ -26,13 +27,7 @@ public void DisplayStartingMessage()
                 Console.WriteLine("Duration must be at least 1 second. Setting to default of 31 seconds.");
                 _duration = 31;
                 break;
-            case > 60:
-                Console.WriteLine("Duration is too long. Setting to maximum of 60 seconds.");
-                _duration = 60;
-                break;
-            default:
-                _duration = 30;
-                break;
+            
         }
         Console.WriteLine("Prepare to begin...");
         ShowSpinner(3);
