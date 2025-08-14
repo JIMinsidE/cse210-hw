@@ -100,7 +100,9 @@ public class GoalManager
 
     private void RecordEventMenu()
     {
-
+        ListGoalDetails();
+        Console.Write("Which goal did you accomplish? ");
+        int index = int.Parse(Console.ReadLine()) - 1;
     }
 
     private void SaveGoals()
