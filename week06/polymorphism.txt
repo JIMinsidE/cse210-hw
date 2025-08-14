@@ -1,0 +1,73 @@
+Polymorphism is one of the main principles in Object-oriented programming. By allowing objects of
+different classes to be treated as objects of a common superclass, polymorphism enables a single 
+method can be overriden and behave different based on the object calling it.
+
+Usually polymorphism used for GUI interfaces as there are many buttons but they do need a different
+behaviour to be applied. And when you have a few sliders or buttons that call the same method, the 
+program would chose the needed one without worrying about specific type of a component - each one 
+knows how to render itself.
+
+In this code down below:
+
+public abstract class Shape
+{
+    private string _color;
+
+    public Shape(string color)
+    {
+        _color = color;
+    }
+    public abstract double GetArea();// <= Overriden method
+}
+
+public class Circle : Shape
+{
+    private double _radius;
+    public Circle(string color, double radius) : base(color)
+    {
+        _radius = radius;
+    }
+    public override double GetArea()// <= Overriding happens here
+    {
+        double area = Math.Round(Math.PI * _radius * _radius, 2);
+        return area;
+    }
+}
+
+public class Square : Shape
+{
+    private double _sideLength;
+
+    public Square(string color, double sideLength) : base(color)
+    {
+        _sideLength = sideLength;
+    }
+    public override double GetArea() // <= Overriding happens here
+    {
+        return _sideLength * _sideLength;
+    }
+}
+
+We can see class Shape and class Circle and Squarewhich inherits from parental class a method
+called GetArea() and overrides it with its own functions to get area as area is calculated differently
+for a circle and a Square.
+
+And when we call this method for different constructors, program knows which one exactly to chose based
+on a constructor type
+
+        List<Shape> shapes = new List<Shape>();
+
+        Rectangle rec1 = new Rectangle("Red", 5, 10);
+        shapes.Add(rec1);
+
+        Circle cr1 = new Circle("Purple", 3);
+        shapes.Add(cr1);
+
+        Square sq1 = new Square("Dark Green", 4);
+        shapes.Add(sq1);
+
+        foreach (Shape shape in shapes)
+        {
+            Console.WriteLine($"Shape Color: {shape.GetColor()}, Area: {shape.GetArea()}");
+        }
+Like in this code it iterates through different shapes and calculates needed Area.
