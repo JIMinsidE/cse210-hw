@@ -92,6 +92,7 @@ public class GoalManager
 
     private void ListGoalDetails()
     {
+        Console.WriteLine("Goals:");
         for (int i = 0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {_goals[i].GetDetailsString()}");

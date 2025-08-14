@@ -1,3 +1,5 @@
+//I used StreamWriter to save goals to a file
+
 using System;
 
 class Program
