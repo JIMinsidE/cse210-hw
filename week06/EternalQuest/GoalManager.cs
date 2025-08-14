@@ -86,13 +86,16 @@ public class GoalManager
             int target = int.Parse(Console.ReadLine());
             Console.Write("Bonus points: ");
             int bonus = int.Parse(Console.ReadLine());
-            _goals.Add(new ChecklistGoal(name, desc, points, target, bonus));
+            _goals.Add(new CheckListGoal(name, desc, points, target, bonus));
         }
     }
 
     private void ListGoalDetails()
     {
-
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {_goals[i].GetDetailsString()}");
+        }
     }
 
     private void RecordEventMenu()
