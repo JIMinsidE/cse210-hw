@@ -128,9 +128,33 @@ public class GoalManager
     private void LoadGoals()
     {
         if (!File.Exists("goals.txt")) return; // Check if the file exists and exits if it doesn't
-         _goals.Clear();
+        _goals.Clear();
         string[] lines = File.ReadAllLines("goals.txt");
         _score = int.Parse(lines[0]);
+        
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] parts = lines[i].Split('|');
+            switch (parts[0])
+            {
+                case "SimpleGoal":
+                    SimpleGoal sg = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
+                    if (bool.Parse(parts[4])) sg.RecordEvent();
+                    _goals.Add(sg);
+                    break;
+
+                case "EternalGoal":
+                    _goals.Add(new EternalGoal(parts[1], parts[2], int.Parse(parts[3])));
+                    break;
+
+                case "ChecklistGoal":
+                    CheckListGoal cg = new CheckListGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
+                    for (int j = 0; j < int.Parse(parts[6]); j++) cg.RecordEvent();
+                    _goals.Add(cg);
+                    break;
+            }
+        }
+        Console.WriteLine("Goals loaded.");
     }
 
 }
