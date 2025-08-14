@@ -13,5 +13,9 @@ public class CheckListGoal : Goal
         _target = target;
         _bonus = bonus;
     }
-    
+
+    public override string GetStringRepresentation()
+    {
+        return $"CheckListGoal|{_shortName}|{_description}|{_points}|{_amountCompleted}|{_target}|{_bonus}|{_amountCompleted}";
+    }
 }
