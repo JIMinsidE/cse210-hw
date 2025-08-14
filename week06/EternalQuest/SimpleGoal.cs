@@ -5,14 +5,18 @@ public class SimpleGoal : Goal
     {
     }
 
-    public override void DisplayGoal()
+    public override void GetStringRepresentation()
     {
-        Console.WriteLine($"[ ] {Name}: {Description} (Points: {Points})");
+        return $"SimpleGoal|{_shortName}|{_description}|{_points}|{_isComplete}";
     }
 
     public override void RecordEvent()
     {
-        Console.WriteLine($"Goal '{Name}' completed! You earned {Points} points.");
-        IsCompleted = true;
+        if (!_isComplete)
+        {
+            _isComplete = true;
+            return _points;
+        }
+        return 0;
     }
 }
