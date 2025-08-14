@@ -34,5 +34,9 @@ public class CheckListGoal : Goal
         }
         return _points;
     }
+    public bool IsComplete()
+    {
+        return _amountCompleted >= _target;
+    }
 
 }
