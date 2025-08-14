@@ -101,7 +101,7 @@ public class GoalManager
     private void RecordEventMenu()
     {
         ListGoalDetails();
-        
+
         Console.Write("Which goal did you accomplish? ");
         int index = int.Parse(Console.ReadLine()) - 1;
 
@@ -115,11 +115,22 @@ public class GoalManager
 
     private void SaveGoals()
     {
-
+        using (StreamWriter writer = new StreamWriter("goals.txt"))
+        {
+            writer.WriteLine(_score);
+            foreach (Goal g in _goals)
+            {
+                writer.WriteLine(g.GetStringRepresentation());
+            }
+        }
+        Console.WriteLine("Goals saved.");
     }
     private void LoadGoals()
     {
-
+        if (!File.Exists("goals.txt")) return; // Check if the file exists and exits if it doesn't
+         _goals.Clear();
+        string[] lines = File.ReadAllLines("goals.txt");
+        _score = int.Parse(lines[0]);
     }
 
 }
