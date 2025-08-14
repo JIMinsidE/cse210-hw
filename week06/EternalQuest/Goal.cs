@@ -13,6 +13,11 @@ public abstract class Goal
 
     public abstract int RecordEvent();
     public abstract bool IsComplete();
+    public abstract string GetStringRepresentasion();
 
-    
+    public virtual string GetDetails()
+    {
+        string status = IsComplete() ? "[x]" : "[ ]";
+        return $"{status} {_shortName}  ({_description})";
+    }    
 }
