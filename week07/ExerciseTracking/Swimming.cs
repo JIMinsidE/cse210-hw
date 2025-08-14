@@ -1,0 +1,4 @@
+class Swimming : Activity
+{
+    
+}
