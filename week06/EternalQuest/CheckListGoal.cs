@@ -18,4 +18,21 @@ public class CheckListGoal : Goal
     {
         return $"CheckListGoal|{_shortName}|{_description}|{_points}|{_amountCompleted}|{_target}|{_bonus}|{_amountCompleted}";
     }
+
+    public override string GetDetailsString()
+    {
+        string status = IsComplete() ? "[x]" : "[ ]";
+        return $"{status} {_shortName}  ({_description}) -- Currently completed: {_amountCompleted}/{_target}";
+    }
+
+    public override int RecordEvent()
+    {
+        _amountCompleted++;
+        if (_amountCompleted == _target)
+        {
+            return _points + _bonus;
+        }
+        return _points;
+    }
+
 }
