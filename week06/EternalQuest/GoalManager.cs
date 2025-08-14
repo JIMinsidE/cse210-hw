@@ -138,9 +138,9 @@ public class GoalManager
             switch (parts[0])
             {
                 case "SimpleGoal":
-                    SimpleGoal sg = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
-                    if (bool.Parse(parts[4])) sg.RecordEvent();
-                    _goals.Add(sg);
+                    SimpleGoal simpleg = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
+                    if (bool.Parse(parts[4])) simpleg.RecordEvent();
+                    _goals.Add(simpleg);
                     break;
 
                 case "EternalGoal":
@@ -148,9 +148,9 @@ public class GoalManager
                     break;
 
                 case "ChecklistGoal":
-                    CheckListGoal cg = new CheckListGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
-                    for (int j = 0; j < int.Parse(parts[6]); j++) cg.RecordEvent();
-                    _goals.Add(cg);
+                    CheckListGoal checkg = new CheckListGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5]));
+                    for (int j = 0; j < int.Parse(parts[6]); j++) checkg.RecordEvent();
+                    _goals.Add(checkg);
                     break;
             }
         }
