@@ -1,12 +1,12 @@
 public abstract class Goal
 {
-    public string _name;
+    public string _shortname;
     public string _description;
     private int _points;
 
-    public Goal(string name, string description, int points)
+    public Goal(string shortname, string description, int points)
     {
-        _name = name;
+        _shortname = shortname;
         _description = description;
         _points = points;
     }
