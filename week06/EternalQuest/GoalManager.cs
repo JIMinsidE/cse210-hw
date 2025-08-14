@@ -101,8 +101,16 @@ public class GoalManager
     private void RecordEventMenu()
     {
         ListGoalDetails();
+        
         Console.Write("Which goal did you accomplish? ");
         int index = int.Parse(Console.ReadLine()) - 1;
+
+        if (index >= 0 && index < _goals.Count)
+        {
+            int earned = _goals[index].RecordEvent();
+            _score += earned;
+            Console.WriteLine($"You earned {earned} points!");
+        }
     }
 
     private void SaveGoals()
